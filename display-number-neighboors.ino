@@ -7,6 +7,7 @@
 #include <BLEUtils.h>
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
+#include <Fri3dMatrix.h>
 
 int scanTime = 30; //In seconds
 
@@ -15,6 +16,20 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks {
       Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
     }
 };
+
+Fri3dMatrix matrix = Fri3dMatrix();
+
+void displayNumbers( int left , int right ) {
+  matrix.clear();
+  if( left < 10 )
+    matrix.drawString( 4, String( left ) );
+  else
+    matrix.drawString( 0, String( left ) );
+  if( right < 10 )
+    matrix.drawString( 11, String( right ) );
+  else
+    matrix.drawString( 7, String( right ) );
+}
 
 void setup() {
   Serial.begin(115200);
@@ -36,9 +51,10 @@ void setup() {
   }
   Serial.println("Number of frieds: ");
   Serial.println(counter);
+  displayNumbers(0, counter);
 }
 
 void loop() {
   setup();
-  delay(2000);
+  delay(20000);
 }
