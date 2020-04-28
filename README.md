@@ -14,6 +14,7 @@ Picture
 Todo
 ====
 
+* Find out how to decrease the TX power of the Beacon, right now it goes too far (around 100m measured)
 * Docker container to flash with arduino-cli
 
 Links
