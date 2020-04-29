@@ -14,7 +14,7 @@ Picture
 Todo
 ====
 
-* Find out how to decrease the TX power of the Beacon, right now it goes too far (around 100m measured)
+* Find out how to decrease the TX power of the Beacon, right now it goes too far (around 100m measured) Try "esp_ble_tx_power_set(ESP_BLE_PWR_TYPE_ADV, ESP_PWR_LVL_N11);" as mentioned here https://github.com/nkolban/esp32-snippets/issues/197
 * Docker container to flash with arduino-cli
 
 Links
